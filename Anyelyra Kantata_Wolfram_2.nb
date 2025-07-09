@@ -1,0 +1,565 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24157,        557]
+NotebookOptionsPosition[     22432,        525]
+NotebookOutlinePosition[     22804,        541]
+CellTagsIndexPosition[     22761,        538]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"NGAB", "[", 
+    RowBox[{"list_", ",", " ", "n_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"currentList", " ", "=", " ", "list"}], ",", " ", "nextList", 
+       ",", " ", "i", ",", " ", "points"}], "}"}], ",", "\[IndentingNewLine]",
+      "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "iterasi", " ", "sesuai", " ", "aturan", " ", "sebanyak", " ", "n", " ",
+        "kali", " ", "untuk", " ", "memperbarui", " ", "list"}], "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Print", "[", "\"\<Hasil Iterasi:\>\"", "]"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"Print", "[", "currentList", "]"}], "\[IndentingNewLine]", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+         RowBox[{"i", " ", "<=", " ", "n"}], ",", " ", 
+         RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"nextList", " ", "=", " ", 
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "3", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "3", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "4", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "4", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "5", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "5", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "6", "]"}], "]"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "6", "]"}], "]"}], "+", 
+                RowBox[{"currentList", "[", 
+                 RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+              "}"}], ",", " ", "10"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"Print", "[", "nextList", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"currentList", " ", "=", " ", "nextList"}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Membuat", " ", "tiga", " ", "titik"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"titik1", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", 
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "2", "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"titik2", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], ",", 
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "4", "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"titik3", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "5", "]"}], "]"}], ",", 
+         RowBox[{"currentList", "[", 
+          RowBox[{"[", "6", "]"}], "]"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"titikList", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{"titik1", ",", " ", "titik2", ",", " ", "titik3"}], "}"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<Titik yang didapatkan adalah \>\"", ",", " ", "titik1", ",", 
+        "\"\<, \>\"", ",", "titik2", ",", "\"\<, \>\"", ",", " ", 
+        "\"\<dan \>\"", ",", "titik3", ",", " ", "\"\<.\>\""}], "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "Cek", " ", "apakah", " ", "ketiga", " ", "titik", " ", "dapat", " ", 
+        "membentuk", " ", "segitiga"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Digunakan", " ", "Triangle", " ", "Inequality"}], " ", "*)"}],
+       "\[IndentingNewLine]", 
+      RowBox[{"AB", "=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "-", 
+            RowBox[{"titik1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", 
+            RowBox[{"titik1", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "^", "2"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"BC", "=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "-", 
+            RowBox[{"titik2", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", 
+            RowBox[{"titik2", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "^", "2"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"CA", "=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik3", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "-", 
+            RowBox[{"titik1", "[", 
+             RowBox[{"[", "1", "]"}], "]"}]}], ")"}], "^", "2"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"titik3", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", 
+            RowBox[{"titik1", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "^", "2"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"isSegitiga", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"AB", "+", "BC"}], ">", "CA"}], "&&", 
+        RowBox[{
+         RowBox[{"AB", "+", "CA"}], ">", "BC"}], "&&", 
+        RowBox[{
+         RowBox[{"BC", "+", "CA"}], ">", "AB"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{"isSegitiga", ",", " ", 
+        RowBox[{
+         RowBox[{
+         "Print", "[", 
+          "\"\<Ketiga titik yang didapatkan bisa membentuk segitiga.\>\"", 
+          "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"Menghitung", " ", "sudut"}], "-", 
+           RowBox[{
+           "sudut", " ", "segitiga", " ", "dengan", " ", "aturan", " ", 
+            "Cosinus"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"sudutA", "=", 
+          RowBox[{"N", "[", 
+           RowBox[{
+            RowBox[{"ArcCos", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"BC", "^", "2"}], "+", 
+                RowBox[{"CA", "^", "2"}], "-", 
+                RowBox[{"AB", "^", "2"}]}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{"2", "*", "BC", "*", "CA"}], ")"}]}], "]"}], "*", 
+            RowBox[{"180", "/", "Pi"}]}], "]"}]}], ";", "\n", 
+         RowBox[{"sudutB", "=", 
+          RowBox[{"N", "[", 
+           RowBox[{
+            RowBox[{"ArcCos", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"AB", "^", "2"}], "+", 
+                RowBox[{"CA", "^", "2"}], "-", 
+                RowBox[{"BC", "^", "2"}]}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{"2", "*", "AB", "*", "CA"}], ")"}]}], "]"}], "*", 
+            RowBox[{"180", "/", "Pi"}]}], "]"}]}], ";", "\n", 
+         RowBox[{"sudutC", "=", 
+          RowBox[{"N", "[", 
+           RowBox[{
+            RowBox[{"ArcCos", "[", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"AB", "^", "2"}], "+", 
+                RowBox[{"BC", "^", "2"}], "-", 
+                RowBox[{"CA", "^", "2"}]}], ")"}], "/", 
+              RowBox[{"(", 
+               RowBox[{"2", "*", "AB", "*", "BC"}], ")"}]}], "]"}], "*", 
+            RowBox[{"180", "/", "Pi"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"sudutList", "=", 
+          RowBox[{"Sort", "[", 
+           RowBox[{"{", 
+            RowBox[{"sudutA", ",", " ", "sudutB", ",", "sudutC"}], "}"}], 
+           "]"}]}], ";", "\n", 
+         RowBox[{"Print", "[", 
+          RowBox[{
+          "\"\<Sudut-sudut dalam derajat dari segitiga tersebut adalah \>\"", 
+           ",", "sudutList"}], "]"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Print", "[", 
+         "\"\<Ketiga titik yang didapatkan tidak bisa membentuk \
+segitiga.\>\"", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Jika", " ", "titik"}], "-", 
+         RowBox[{"titik", " ", "membentuk", " ", "segitiga"}]}], ",", " ", 
+        RowBox[{
+        "maka", " ", "akan", " ", "digambar", " ", "pada", " ", "bidang", " ",
+          "Kartesius"}]}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{"isSegitiga", ",", 
+        RowBox[{"ListLinePlot", "[", 
+         RowBox[{"{", 
+          RowBox[{"titik1", ",", "titik2", ",", "titik3", ",", "titik1"}], 
+          "}"}], "]"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.9327184569892645`*^9, 3.9327187625084147`*^9}, {
+   3.9327188695533047`*^9, 3.932719032921134*^9}, {3.932721105940925*^9, 
+   3.932721195345888*^9}, {3.9327212657564073`*^9, 3.9327213179427547`*^9}, {
+   3.932721361188077*^9, 3.932721399827379*^9}, {3.932721466126604*^9, 
+   3.932721472758006*^9}, {3.932721510818741*^9, 3.932721532485958*^9}, {
+   3.932721624834938*^9, 3.932721722228219*^9}, {3.932721846611555*^9, 
+   3.9327218538252077`*^9}, {3.9327219142295136`*^9, 
+   3.9327223410321064`*^9}, {3.9327223939517255`*^9, 3.932722666808296*^9}, {
+   3.93272271976082*^9, 3.932722767100998*^9}, {3.9327228197242727`*^9, 
+   3.932722850492872*^9}, {3.93281169852744*^9, 3.9328117182639503`*^9}, {
+   3.9328120177660885`*^9, 3.9328122270459843`*^9}, {3.932812471748292*^9, 
+   3.9328125643481007`*^9}, {3.932813600972667*^9, 3.932813634367549*^9}, {
+   3.9328137109860134`*^9, 3.9328137261827474`*^9}, {3.9328138237854967`*^9, 
+   3.9328139092096815`*^9}, {3.932813956828081*^9, 3.9328140061640625`*^9}, {
+   3.932814059573792*^9, 3.932814296917413*^9}, {3.9328143958568153`*^9, 
+   3.93281445900731*^9}, {3.9328144986520295`*^9, 3.932814515386779*^9}, {
+   3.932814571336892*^9, 3.9328146215996604`*^9}, {3.932814711815219*^9, 
+   3.932814733679242*^9}, {3.9328148073192067`*^9, 3.9328149049237256`*^9}, {
+   3.93281495569182*^9, 3.9328149753610215`*^9}, {3.932815007271453*^9, 
+   3.9328150319751606`*^9}, 3.932815500832463*^9, {3.9328155565413346`*^9, 
+   3.9328155696191564`*^9}, {3.932815789961998*^9, 3.9328157936609135`*^9}, {
+   3.932815845165333*^9, 3.9328158471713076`*^9}, {3.9328158995258627`*^9, 
+   3.9328159093209915`*^9}, {3.932816278820958*^9, 3.9328163522407475`*^9}, {
+   3.932816401672988*^9, 3.932816486026436*^9}, {3.932816548710696*^9, 
+   3.9328165655814357`*^9}, {3.93281664384289*^9, 3.932816645350358*^9}, {
+   3.9328167299943905`*^9, 3.9328167440756254`*^9}, {3.9328681851437845`*^9, 
+   3.9328682650319166`*^9}, {3.932868309519891*^9, 3.9328683097870407`*^9}, {
+   3.9328683916886716`*^9, 3.932868452820912*^9}, {3.9328684855664825`*^9, 
+   3.9328684977608013`*^9}, {3.932868552317745*^9, 3.932868572112978*^9}, {
+   3.932868611128108*^9, 3.932868723375928*^9}, {3.933121346977598*^9, 
+   3.933121366394854*^9}, {3.933138789841949*^9, 
+   3.9331388198464947`*^9}},ExpressionUUID->"55947f16-6e6b-4d1b-bdce-\
+6f866af9d98d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NGAB", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", "4", ",", "1", ",", "5", ",", "9"}], "}"}], 
+   ",", " ", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9327187732608166`*^9, 3.93271878625677*^9}, 
+   3.9327189448558283`*^9, {3.932719062767005*^9, 3.932719070850506*^9}, {
+   3.9327219211203756`*^9, 3.9327219243405457`*^9}, {3.9327228718858604`*^9, 
+   3.9327228798003387`*^9}, {3.9328143104177485`*^9, 
+   3.9328143172440453`*^9}, {3.9328150192567935`*^9, 3.932815023021736*^9}, {
+   3.932816530056105*^9, 3.9328165356680684`*^9}, {3.932868461954161*^9, 
+   3.932868462514979*^9}, {3.9328685169141874`*^9, 3.932868519736725*^9}, {
+   3.9328685962549973`*^9, 3.93286860178681*^9}, {3.932868662476714*^9, 
+   3.9328686709781437`*^9}, {3.9328687362326016`*^9, 3.93286873983191*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"b43ce826-a085-4537-8f50-2f5e5af44c7a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Hasil Iterasi:\"\>"], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.9328687401821404`*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"d9a226ef-7037-4401-9ecd-82bbc037f9a1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "1", ",", "4", ",", "1", ",", "5", ",", "9"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.9328687401853347`*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"694f7d48-fb8c-4764-afb9-30633d412d53"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "5", ",", "5", ",", "6", ",", "4", ",", "2"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.9328687401876965`*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"6c2d9ebf-4834-414d-ac5e-ab4434e94c8b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"9", ",", "0", ",", "1", ",", "0", ",", "6", ",", "6"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.932868740189145*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"0c93fab2-c5cb-4ed9-a8da-81902fc27eea"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"9", ",", "1", ",", "1", ",", "6", ",", "2", ",", "5"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.9328687401911535`*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"37ca134c-ab1f-4e22-a46f-60ec281dbbf6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Titik yang didapatkan adalah \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", "1"}], "}"}], "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "6"}], "}"}], "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", "\<\"dan \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5"}], "}"}], "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm[
+  "Titik yang didapatkan adalah ", {9, 1}, ", ", {1, 6}, ", ", "dan ", {2, 5},
+    "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.932868740193182*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"3f220671-beee-466f-8dbf-202dee257ee7"],
+
+Cell[BoxData["\<\"Ketiga titik yang didapatkan bisa membentuk \
+segitiga.\"\>"], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.932868740195187*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"762a41f8-8985-4de0-b343-2332f5945f12"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Sudut-sudut dalam derajat dari segitiga tersebut adalah \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+    "2.260501911141195`", ",", "12.994616791916512`", ",", 
+     "164.74488129694225`"}], "}"}]}],
+  SequenceForm[
+  "Sudut-sudut dalam derajat dari segitiga tersebut adalah ", {
+   2.260501911141195, 12.994616791916512`, 164.74488129694225`}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.93281563822569*^9, 3.93281580141665*^9, 3.9328158551210318`*^9, 
+   3.9328159136706142`*^9, {3.9328164998050156`*^9, 3.932816535996585*^9}, 
+   3.93281656926247*^9, {3.9328166503942614`*^9, 3.9328166530973654`*^9}, {
+   3.932868233981638*^9, 3.932868246938842*^9}, 3.9328684628460855`*^9, {
+   3.9328685008485384`*^9, 3.932868528243105*^9}, 3.9328686034541845`*^9, {
+   3.932868648386465*^9, 3.932868671584382*^9}, 3.9328687401961875`*^9},
+ CellLabel->
+  "During evaluation of \
+In[20]:=",ExpressionUUID->"d9f3e687-62b8-425e-b08e-1391d77fc856"]
+}, Open  ]],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      NCache[
+       Rational[7, 360], 0.019444444444444445`]], AbsoluteThickness[1.6], 
+     LineBox[{{9., 1.}, {1., 6.}, {2., 5.}, {9., 1.}}]}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 9.}, {0, 6.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.932868740218916*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"6fb967ef-8a8d-41c4-9948-468f08c6ac0f"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.932868476193757*^9, 
+  3.9328685082978773`*^9},ExpressionUUID->"89494724-bce6-4334-a880-\
+f0b6b44b0fc4"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9328685265074835`*^9, 
+  3.9328685265142403`*^9}},ExpressionUUID->"9674fe3e-6b57-40fd-9abf-\
+9bfba9e289b4"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9327228942852917`*^9, 
+  3.9327229000698023`*^9}},ExpressionUUID->"1d2989b1-5408-429d-965f-\
+d54eb963c22a"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.932718740334837*^9, 
+  3.932718740958585*^9}},ExpressionUUID->"1c3be937-ecaf-447c-9900-\
+e18b04e77aba"]
+},
+WindowSize->{1264, 629},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 12756, 288, 1023, "Input",ExpressionUUID->"55947f16-6e6b-4d1b-bdce-6f866af9d98d"],
+Cell[CellGroupData[{
+Cell[13339, 312, 908, 15, 32, "Input",ExpressionUUID->"b43ce826-a085-4537-8f50-2f5e5af44c7a"],
+Cell[CellGroupData[{
+Cell[14272, 331, 617, 10, 23, "Print",ExpressionUUID->"d9a226ef-7037-4401-9ecd-82bbc037f9a1"],
+Cell[14892, 343, 684, 13, 23, "Print",ExpressionUUID->"694f7d48-fb8c-4764-afb9-30633d412d53"],
+Cell[15579, 358, 684, 13, 23, "Print",ExpressionUUID->"6c2d9ebf-4834-414d-ac5e-ab4434e94c8b"],
+Cell[16266, 373, 682, 13, 23, "Print",ExpressionUUID->"0c93fab2-c5cb-4ed9-a8da-81902fc27eea"],
+Cell[16951, 388, 684, 13, 23, "Print",ExpressionUUID->"37ca134c-ab1f-4e22-a46f-60ec281dbbf6"],
+Cell[17638, 403, 1162, 24, 23, "Print",ExpressionUUID->"3f220671-beee-466f-8dbf-202dee257ee7"],
+Cell[18803, 429, 656, 11, 23, "Print",ExpressionUUID->"762a41f8-8985-4de0-b343-2332f5945f12"],
+Cell[19462, 442, 1011, 21, 23, "Print",ExpressionUUID->"d9f3e687-62b8-425e-b08e-1391d77fc856"]
+}, Open  ]],
+Cell[20488, 466, 1300, 36, 276, "Output",ExpressionUUID->"6fb967ef-8a8d-41c4-9948-468f08c6ac0f"]
+}, Open  ]],
+Cell[21803, 505, 152, 3, 32, "Input",ExpressionUUID->"89494724-bce6-4334-a880-f0b6b44b0fc4"],
+Cell[21958, 510, 156, 3, 32, "Input",ExpressionUUID->"9674fe3e-6b57-40fd-9abf-9bfba9e289b4"],
+Cell[22117, 515, 156, 3, 32, "Input",ExpressionUUID->"1d2989b1-5408-429d-965f-d54eb963c22a"],
+Cell[22276, 520, 152, 3, 32, "Input",ExpressionUUID->"1c3be937-ecaf-447c-9900-e18b04e77aba"]
+}
+]
+*)
+
